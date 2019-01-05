@@ -99,7 +99,7 @@ def train_cnn():
 
     tensorboard  = TensorBoard(log_dir='./cnn1_graph', histogram_freq=0, write_graph=True, write_images=True)
     checkpoint = ModelCheckpoint("data/models/cnn_chkpt.h5", monitor='val_loss', save_best_only=True, verbose=1, mode="min")
-    stopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=2, verbose=1)
+    stopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=1, verbose=1)
 
     model.fit_generator(batcher.train_gen(),
                     steps_per_epoch=batcher.train_steps,

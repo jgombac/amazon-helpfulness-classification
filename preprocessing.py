@@ -351,33 +351,28 @@ def get_review_counts():
 
 
 if __name__ == '__main__':
-    # import data_selection as select
-    # sel = select.get_selection()
-    # texts = sel.reviewText.tolist()
-    # #preprocessed = preprocess(texts)
-    # sent_lengths = get_sentence_lengths()
-    # print(sent_lengths[:2])
-    # # get_word_counts(texts)
-    # pos_tags = extract_tags(texts)
-    # print(pos_tags[:2])
-    # pos_tags_bow = get_tags_bow(pos_tags)
-    # print(pos_tags_bow[:2])
-    # discreticize_labels()
-    # discreticize_ratings()
-    #
-    # normalize_tag_bow()
+    import data_selection as select
+    sel = select.get_selection()
+    texts = sel.reviewText.tolist()
+    preprocessed = preprocess(texts)
+    sent_lengths = get_sentence_lengths()
+    print(sent_lengths[:2])
+    get_word_counts(texts)
+    pos_tags = extract_tags(texts)
+    print(pos_tags[:2])
+    pos_tags_bow = get_tags_bow(pos_tags)
+    print(pos_tags_bow[:2])
+    discreticize_labels()
+    discreticize_ratings()
 
-    # ratios = get_spelling_ratios()
-    # print(ratios[:10])
+    normalize_tag_bow()
 
-    #get_sent_word_distribution()
+    ratios = get_spelling_ratios()
+    print(ratios[:10])
 
-    # normalize_sentence_lengths()
-    # normalize_word_counts()
+    get_sent_word_distribution()
+
+    normalize_sentence_lengths()
+    normalize_word_counts()
 
     get_review_counts()
-    pass
-    # normalize_tag_bow()
-    # print(get_sentence_lengths(sel.reviewText.tolist())[:100])
-    # print(get_word_counts(sel.reviewText.tolist())[:100])
-    #print(get_tags_bow(extract_tags(None)))
